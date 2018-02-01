@@ -1,0 +1,42 @@
+﻿@model LFA.EventManager.ViewModels.SelectInvitationViewModel
+
+@{
+    ViewBag.Title = "Selectinvites";
+}
+<form>
+    <table class="table">
+        <tr>
+            <th>Select</th>
+            <th>Name</th>
+        </tr>
+        @foreach (var invitant in Model.Contacts)
+        {
+            <tr>
+                <td>
+                    @*<input type="checkbox" value=@invitant.Value id="check-box" />*@
+                    @Html.EditorFor(model => model.Invite)
+                </td>
+                <td>
+                    @invitant.Text
+                </td>
+            </tr>
+
+        }
+        
+    </table>
+    <div class="form-group ">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Invite" class="btn btn-default " />
+        </div>
+    </div>
+</form>
+
+@*<script>
+    $(document).ready(function () {
+        $(".btn-invite").on('click', function () {
+            
+        });
+        
+        
+    });
+</script>*@
